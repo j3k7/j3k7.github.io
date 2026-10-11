@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="郭康俊的机器人学习项目展示：双臂气球充气、DSRL 强化学习、Online DAgger 与 MoE-ACT 多任务操作。">
+  <title>郭康俊 · 机器人学习项目展示</title>
+  <link rel="preload" href="portfolio-round.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+  <header class="profile">
+    <div class="profile-heading"><div><h1>郭康俊 <span>Kangjun Guo</span></h1><p class="affiliation">香港科技大学（广州） · 机器人与自动系统 · 全奖研究型硕士</p></div><div class="contact"><a href="mailto:kguo886@connect.hkust-gz.edu.cn">kguo886@connect.hkust-gz.edu.cn</a><a href="https://github.com/j3k7" target="_blank" rel="noopener">GitHub / j3k7 ↗</a></div></div>
+    <p class="introduction">研究方向为双臂操作、模仿学习、在线强化学习与 VLA 模型。我的工作涉及策略设计、模型训练、仿真评估和真实机器人部署。</p>
+    <p class="job"><strong>求职意向</strong><span>具身智能 / 机器人学习算法实习</span><span class="availability">可提前实习</span></p>
+  </header>
+
+  <article class="project">
+    <header class="project-heading"><p class="project-meta">项目 01 <span>原力灵机 Dexmal · 实习 · 2026.06—2026.09</span></p><h2>双臂精细操作与在线学习</h2><p>以双臂机器人气球充气为任务，基于 OpenPI 和 RLinf，开展策略训练、DSRL 在线强化学习及 Online DAgger 迭代。</p></header>
+
+    <section class="step">
+      <div class="step-heading"><span class="step-number">1.1</span><h3>双臂气球充气</h3></div>
+      <p class="step-intro">基于 π0.5 使用 SFT、DAgger 数据训练，通过数据清洗、配比及训练参数优化，将完整气球充气任务成功率提升至约 <strong>50%</strong>。下面展示机器人执行任务的过程。</p>
+      <div class="media-grid two"><figure class="video"><video controls playsinline preload="none" poster="balloon-small-fast.jpg" aria-label="小气球充气"><source src="balloon-small-fast.mp4" type="video/mp4"></video><figcaption>小气球充气<small>加速演示</small></figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="balloon-large.jpg" aria-label="大气球充气"><source src="balloon-large.mp4" type="video/mp4"></video><figcaption>大气球充气<small>实机演示</small></figcaption></figure></div>
+    </section>
+
+    <section class="step algorithm-step">
+      <div class="algorithm-copy"><div class="step-heading"><span class="step-number">1.2</span><h3>DSRL 在线强化学习</h3></div><p>针对气球充气中的关键插入动作，基于 RLinf 开展在线强化学习。通过引入 Warm-up，并调优 Rollout/Update 比例、Batch Size 等训练参数，改善插入动作的执行表现。</p><p class="inline-result"><span>关键插入动作成功率</span><strong>约 40% → 70%</strong></p></div>
+      <div><figure class="video"><video controls playsinline preload="none" poster="dsrl-insertion.jpg" aria-label="DSRL 训练后的关键插入动作"><source src="dsrl-insertion.mp4" type="video/mp4"></video><figcaption>DSRL 训练后的关键插入动作<small>实机近景</small></figcaption></figure></div>
+    </section>
+
+    <section class="step">
+      <div class="step-heading"><span class="step-number">1.3</span><h3>Online DAgger</h3></div>
+      <p class="step-intro">设计并实现模型 Rollout、人工接管、在线/离线数据混合训练和迭代部署的闭环。统一 Buffer 的动作构造与预处理，并优化推理通信和批量上传流程。下面两段视频展示训练前后的动作表现。</p>
+      <div class="media-grid two comparison"><figure class="video"><video controls playsinline preload="none" poster="dagger-before.jpg" aria-label="训练前"><source src="dagger-before.mp4" type="video/mp4"></video><figcaption>训练前<small>Online DAgger</small></figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="dagger-after.jpg" aria-label="训练后"><source src="dagger-after.mp4" type="video/mp4"></video><figcaption>训练后<small>Online DAgger</small></figcaption></figure></div>
+    </section>
+  </article>
+
+  <article class="project">
+    <header class="project-heading"><p class="project-meta">项目 02 <span>项目负责人 · 2025.07—2026.02</span></p><h2>MoE-ACT：双臂机器人多任务操作</h2><p>针对多任务学习中的任务干扰，在 ACT 编码器中引入稀疏 MoE，通过可学习路由区分任务动作分布；在解码器中结合 FiLM 调制与多尺度交叉注意力，实现语义对齐和视觉特征融合。</p><p class="submission">第一作者，已投稿 ICRA 2027。</p></header>
+
+    <section class="step">
+      <div class="step-heading"><h3>真实机器人演示</h3></div>
+      <p class="step-intro">在 AIRBOT MMK2 上完成双臂协同任务的训练与部署。实机平均成功率为 <strong>60.0%</strong>，较 ACT 的 35.0% 提升 <strong>25.0 个百分点</strong>。</p>
+      <div class="media-grid two"><figure class="video"><video controls playsinline preload="none" poster="moe-real-01.jpg" aria-label="双臂协同操作"><source src="moe-real-01.mp4" type="video/mp4"></video><figcaption>双臂协同操作<small>AIRBOT MMK2</small></figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="real-grasp-can.jpg" aria-label="物体抓取"><source src="real-grasp-can.mp4" type="video/mp4"></video><figcaption>物体抓取<small>AIRBOT MMK2</small></figcaption></figure></div>
+    </section>
+
+    <section class="step">
+      <div class="step-heading"><h3>仿真任务演示</h3></div>
+      <p class="step-intro">在 RoboTwin 2.0 上进行多任务评估，平均成功率为 <strong>62.0%</strong>，较 ACT 的 44.6% 提升 <strong>17.4 个百分点</strong>。</p>
+      <div class="media-grid three simulation"><figure class="video"><video controls playsinline preload="none" poster="sim-stack-bowls.jpg" aria-label="碗具堆叠"><source src="sim-stack-bowls.mp4" type="video/mp4"></video><figcaption>碗具堆叠</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-handover-block.jpg" aria-label="双臂物体传递"><source src="sim-handover-block.mp4" type="video/mp4"></video><figcaption>双臂物体传递</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-place-tray.jpg" aria-label="托盘放置"><source src="sim-place-tray.mp4" type="video/mp4"></video><figcaption>托盘放置</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-lift-pot.jpg" aria-label="双臂提锅"><source src="sim-lift-pot.mp4" type="video/mp4"></video><figcaption>双臂提锅</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-place-basket.jpg" aria-label="篮筐放置"><source src="sim-place-basket.mp4" type="video/mp4"></video><figcaption>篮筐放置</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-cup-coaster.jpg" aria-label="杯具放置"><source src="sim-cup-coaster.mp4" type="video/mp4"></video><figcaption>杯具放置</figcaption></figure></div>
+    </section>
+
+    <section class="step">
+      <div class="step-heading"><h3>专家选择过程</h3></div>
+      <p class="step-intro">任务执行与专家选择变化的同步展示。</p>
+      <div class="media-grid two routing"><figure class="video"><video controls playsinline preload="none" poster="expert-routing-handover.jpg" aria-label="双臂物体传递与专家选择"><source src="expert-routing-handover.mp4" type="video/mp4"></video><figcaption>双臂物体传递与专家选择</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="expert-routing-pot.jpg" aria-label="双臂提锅与专家选择"><source src="expert-routing-pot.mp4" type="video/mp4"></video><figcaption>双臂提锅与专家选择</figcaption></figure></div>
+    </section>
+
+    <section class="step results">
+      <div class="step-heading"><h3>实验结果</h3></div>
+      <div class="media-grid three charts"><figure><img src="simulation.png" alt="仿真平均成功率：ACT44.6%，DP46.3%，RDT49.0%，BAKU45.0%，π0 56.9%，MoE-ACT62.0%" loading="lazy"><figcaption>仿真基线对比</figcaption></figure><figure><img src="ablation.png" alt="模块消融：Scaled ACT48.5%，无FiLM及MSCA50.1%，无FiLM53.1%，无MSCA58.8%，完整模型62.0%" loading="lazy"><figcaption>模块消融实验</figcaption></figure><figure><img src="real-world.png" alt="实机平均成功率：ACT35.0%，BAKU46.7%，MoE-ACT60.0%" loading="lazy"><figcaption>实机结果对比</figcaption></figure></div>
+      <p class="result-note">专家数量实验：Top-k = 4 时，8 / 16 / 32 / 64 个专家对应的平均成功率为 55.1% / 56.4% / 56.4% / 62.0%。</p>
+    </section>
+  </article>
+
+  <article class="project compact-project">
+    <header class="project-heading"><p class="project-meta">项目 03 <span>项目负责人 · 2026.02—2026.05</span></p><h2>RoboVerifier：VLA 动作验证</h2><p>针对 VLA 模型单次推理的可靠性问题，对 OpenVLA 多次采样生成的候选动作，使用 Qwen2.5-VL 验证器评分并择优执行。</p></header>
+    <div class="verifier-copy"><p><strong>我的工作：</strong>设计多候选生成与验证选择流程；基于 Bridge V2 构建动作偏好数据集，通过 LoRA 微调验证器，学习候选动作质量评分。</p><p><strong>实验验证：</strong>在 SIMPLER 四个任务上开展评估，验证动作选择对任务成功率的改善。</p></div>
+  </article>
+
+  <footer class="background"><div><h3>教育经历</h3><p><strong>香港科技大学（广州）</strong><span>2025.09—至今</span><br>机器人与自动系统 · 全奖研究型硕士</p><p><strong>南昌大学</strong><span>2021.09—2025.06</span><br>自动化 · GPA 3.49/4 · 专业前 9%</p></div><div><h3>技能与成果</h3><p>Python、C++、PyTorch；机器人策略训练、仿真评估与实机部署。IELTS 6.5。</p><p>国家奖学金。第一作者发表 SCI Q1 论文 1 篇、EI 国际会议论文 1 篇（Best Paper Award）。</p></div></footer>
+</main>
+</body>
+</html>
