@@ -2,7 +2,7 @@ Portfolio Sans Subset
 Source project: https://github.com/google/fonts/tree/main/ofl/notosanssc
 Original font: NotoSansSC[wght].ttf from the official google/fonts repository.
 Original copyright: 2014-2021 Adobe; Reserved Font Name: Source.
-Modification date: 2026-10-11.
+Modification date: 2026-10-22.
 Modifications: subset to the portfolio page text, printable ASCII and common punctuation; converted to WOFF2; internal family/full/PostScript names changed to Portfolio Sans Subset (PostScript: PortfolioSansSubset-Thin). The variable weight axis (100-900), original glyph outlines, copyright, author and license records are retained.
 This derivative font remains licensed under the SIL Open Font License 1.1.
 
