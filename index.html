@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="郭康俊的机器人学习项目展示：双臂气球充气、DSRL 强化学习、Online DAgger 与 MoE-ACT 多任务操作。">
   <title>郭康俊 · 机器人学习项目展示</title>
-  <link rel="preload" href="portfolio-sans.woff2?v=20261022" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="preload" href="portfolio-sans.woff2?v=20261022b" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <main class="page">
@@ -27,19 +27,19 @@
     </section>
 
     <section class="step algorithm-step">
-      <div class="algorithm-copy"><div class="step-heading"><span class="step-number">1.2</span><h3>DSRL 在线强化学习</h3></div><p>基于 RLinf 框架开展 DSRL 在线强化学习，聚焦气球充气任务中的关键插入动作，通过引入 Warm-up 机制，并调优 Rollout/Update 比例、Batch Size 等关键训练参数，将该动作成功率由约 40% 提升至约 70%。</p><p class="inline-result"><span>关键插入动作成功率</span><strong>约 40% → 70%</strong></p></div>
-      <div><figure class="video"><video controls playsinline preload="none" poster="dsrl-insertion.jpg" aria-label="DSRL 训练后的关键插入动作"><source src="dsrl-insertion.mp4" type="video/mp4"></video><figcaption>DSRL 训练后的关键插入动作<small>实机近景</small></figcaption></figure></div>
+      <div class="algorithm-copy"><div class="step-heading"><span class="step-number">1.2</span><h3>DSRL 在线强化学习</h3></div><p>基于 RLinf 框架开展 DSRL 在线强化学习，聚焦气球充气任务中的关键插入动作，通过引入 Warm-up 机制，并调优 Rollout/Update 比例、Batch Size 等关键训练参数，将该动作成功率由约 40% 提升至约 70%。</p></div>
+      <div><figure class="video"><video controls playsinline preload="none" poster="dsrl-insertion.jpg" aria-label="DSRL 训练后的关键插入动作"><source src="dsrl-insertion.mp4" type="video/mp4"></video><figcaption>DSRL 训练后的关键插入动作<small>加速演示</small></figcaption></figure></div>
     </section>
 
     <section class="step">
       <div class="step-heading"><span class="step-number">1.3</span><h3>Online DAgger 训练</h3></div>
       <p class="step-intro">设计基于人工接管的在线纠错训练流程，构建覆盖策略执行、在线/离线混合训练与模型迭代部署的闭环，并对数据处理及传输链路进行优化，解决离线模仿学习中的数据分布偏移问题。</p>
-      <div class="media-grid two comparison"><figure class="video"><video controls playsinline preload="none" poster="dagger-before.jpg" aria-label="训练前"><source src="dagger-before.mp4" type="video/mp4"></video><figcaption>训练前<small>Online DAgger</small></figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="dagger-after.jpg" aria-label="训练后"><source src="dagger-after.mp4" type="video/mp4"></video><figcaption>训练后<small>Online DAgger</small></figcaption></figure></div>
+      <div class="media-grid two comparison"><figure class="video"><video controls playsinline preload="none" poster="dagger-before.jpg" aria-label="训练前"><source src="dagger-before.mp4" type="video/mp4"></video><figcaption>训练前</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="dagger-after.jpg" aria-label="训练后"><source src="dagger-after.mp4" type="video/mp4"></video><figcaption>训练后</figcaption></figure></div>
     </section>
   </article>
 
   <article class="project">
-    <header class="project-heading"><p class="project-meta">项目 02 <span>项目负责人 · 2025.07—2026.02</span></p><h2>MoE-ACT：双臂机器人多任务操作</h2><p>针对多任务学习中的任务干扰，在 ACT 编码器中引入稀疏 MoE，通过可学习路由区分任务动作分布；在解码器中结合 FiLM 调制与多尺度交叉注意力，实现语义对齐和视觉特征融合。</p><p class="submission">第一作者，已投稿 ICRA 2027。</p></header>
+    <header class="project-heading"><p class="project-meta">项目 02 <span>项目负责人 · 2025.07—2026.02</span></p><h2>MoE-ACT：双臂机器人多任务操作</h2><p>针对机器人操作策略在多任务学习中面临的任务干扰问题，提出轻量化多任务操作算法 MoE-ACT。该框架在 Action Chunking Transformer 模型中集成稀疏专家混合模型（MoE），根据任务上下文、视觉观测和本体感觉状态，动态地将图像 token 路由至选定的专家，提高双臂机器人的多任务学习能力。</p><p class="submission">第一作者，已投稿 ICRA 2027。</p></header>
 
     <section class="step">
       <div class="step-heading"><h3>真实机器人演示</h3></div>
@@ -49,7 +49,7 @@
 
     <section class="step">
       <div class="step-heading"><h3>仿真任务演示</h3></div>
-      <p class="step-intro">在 RoboTwin 2.0 上进行多任务评估，平均成功率为 <strong>62.0%</strong>，较 ACT 的 44.6% 提升 <strong>17.4 个百分点</strong>。</p>
+      <p class="step-intro">在 RoboTwin 2.0 上进行多任务评估，平均成功率为 <strong>62.0%</strong>，较 ACT 的 44.6% 提升 <strong>17.4 个百分点</strong>。MoE-ACT 仅使用 0.95B 激活参数，便超越了参数量为 3B 的 π0 模型，成功率高出 5.1 个百分点。</p>
       <div class="media-grid three simulation"><figure class="video"><video controls playsinline preload="none" poster="sim-stack-bowls.jpg" aria-label="碗具堆叠"><source src="sim-stack-bowls.mp4" type="video/mp4"></video><figcaption>碗具堆叠</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-handover-block.jpg" aria-label="双臂物体传递"><source src="sim-handover-block.mp4" type="video/mp4"></video><figcaption>双臂物体传递</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-place-tray.jpg" aria-label="托盘放置"><source src="sim-place-tray.mp4" type="video/mp4"></video><figcaption>托盘放置</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-lift-pot.jpg" aria-label="双臂提锅"><source src="sim-lift-pot.mp4" type="video/mp4"></video><figcaption>双臂提锅</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-place-basket.jpg" aria-label="篮筐放置"><source src="sim-place-basket.mp4" type="video/mp4"></video><figcaption>篮筐放置</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="sim-cup-coaster.jpg" aria-label="杯具放置"><source src="sim-cup-coaster.mp4" type="video/mp4"></video><figcaption>杯具放置</figcaption></figure></div>
     </section>
 
@@ -61,8 +61,7 @@
 
     <section class="step results">
       <div class="step-heading"><h3>实验结果</h3></div>
-      <div class="media-grid three charts"><figure><img src="simulation.png" alt="仿真平均成功率：ACT44.6%，DP46.3%，RDT49.0%，BAKU45.0%，π0 56.9%，MoE-ACT62.0%" loading="lazy"><figcaption>仿真基线对比</figcaption></figure><figure><img src="ablation.png" alt="模块消融：Scaled ACT48.5%，无FiLM及MSCA50.1%，无FiLM53.1%，无MSCA58.8%，完整模型62.0%" loading="lazy"><figcaption>模块消融实验</figcaption></figure><figure><img src="real-world.png" alt="实机平均成功率：ACT35.0%，BAKU46.7%，MoE-ACT60.0%" loading="lazy"><figcaption>实机结果对比</figcaption></figure></div>
-      <p class="result-note">专家数量实验：Top-k = 4 时，8 / 16 / 32 / 64 个专家对应的平均成功率为 55.1% / 56.4% / 56.4% / 62.0%。</p>
+      <div class="media-grid two charts"><figure><img src="simulation.png" alt="仿真平均成功率：ACT44.6%，DP46.3%，RDT49.0%，BAKU45.0%，π0 56.9%，MoE-ACT62.0%" loading="lazy"><figcaption>仿真基线对比</figcaption></figure><figure><img src="real-world.png" alt="实机平均成功率：ACT35.0%，BAKU46.7%，MoE-ACT60.0%" loading="lazy"><figcaption>实机结果对比</figcaption></figure><figure><img src="ablation.png" alt="模块消融：Scaled ACT48.5%，无FiLM及MSCA50.1%，无FiLM53.1%，无MSCA58.8%，完整模型62.0%" loading="lazy"><figcaption>模块消融实验</figcaption></figure><figure><img src="expert-scaling.png" alt="Top-k为4时，8、16、32、64个专家的平均成功率分别为55.1%、56.4%、56.4%、62.0%" loading="lazy"><figcaption>专家数量与任务成功率</figcaption></figure></div>
     </section>
   </article>
 
@@ -71,7 +70,18 @@
     <div class="verifier-copy"><p><strong>我的工作：</strong>设计多候选生成与验证选择流程；基于 Bridge V2 构建动作偏好数据集，通过 LoRA 微调验证器，学习候选动作质量评分。</p><p><strong>实验验证：</strong>在 SIMPLER 四个任务上开展评估，验证动作选择对任务成功率的改善。</p></div>
   </article>
 
-  <footer class="background"><div><h3>教育经历</h3><p><strong>香港科技大学（广州）</strong><span>2025.09—至今</span><br>机器人与自动系统 · 全奖研究型硕士</p><p><strong>南昌大学</strong><span>2021.09—2025.06</span><br>自动化 · GPA 3.49/4 · 专业前 9%</p></div><div><h3>技能与成果</h3><p>Python、C++、PyTorch；机器人策略训练、仿真评估与实机部署。IELTS 6.5。</p><p>国家奖学金。第一作者发表 SCI Q1 论文 1 篇、EI 国际会议论文 1 篇（Best Paper Award）。</p></div></footer>
+  <article class="project compact-project">
+    <header class="project-heading"><p class="project-meta">项目 04</p><h2>分数扩散模型辅助的有限视角光声图像重建</h2><p>负责分数扩散模型图像重建课题研究，针对受限视角成像导致的图像畸变问题，提出融合模型迭代算法与分数扩散先验的高质量重建方法。基于 Python、PyTorch 完成算法设计、模型训练与实验验证，并在圆形仿体和小鼠腹部活体数据上开展测试。</p><p>在 70° 极小探测视角下，所提方法在圆形仿体数据上的 PSNR 较传统算法提升 203%、SSIM 提升 48%，显著优于 GAN 和 U-Net。以第一作者发表 SCI Q1 论文 1 篇、EI 会议论文 1 篇。</p></header>
+    <section class="step publications" aria-label="相关论文">
+      <div class="step-heading"><h3>相关论文</h3></div>
+      <ul>
+        <li><p class="publication-meta">Photoacoustics · 2024 · SCI Q1</p><a href="https://doi.org/10.1016/j.pacs.2024.100623" target="_blank" rel="noopener">Score-based generative model-assisted information compensation for high-quality limited-view reconstruction in photoacoustic tomography <span aria-hidden="true">↗</span></a></li>
+        <li><p class="publication-meta">SPIE · 2024 · EI 会议</p><a href="https://doi.org/10.1117/12.3022605" target="_blank" rel="noopener">Generative model for limited-view photoacoustic tomography reconstruction <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </section>
+  </article>
+
+  <footer class="honors"><h3>奖学金与荣誉</h3><ul><li>本科生国家奖学金（2 次）</li><li>南昌大学优秀毕业生</li><li>“泰豪之星·优秀大学生”奖学金</li><li>南昌大学特等奖学金（2 次）</li><li>IACOP 2023 最佳海报奖</li><li>Best Paper Award（IACOP 2024）</li></ul></footer>
 </main>
 </body>
 </html>
